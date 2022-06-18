@@ -1,0 +1,2 @@
+# factoryPattern
+factory pattern study
