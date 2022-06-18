@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Popup Style</title>
+  <link rel="stylesheet" href="./assets/css/stye.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="content_header"></div>
+    <div class="content_body"></div>
+
+    <!-- popup_wrap -->
+    <div class="popup_wrap" data-type="window" style="display: none">
+      <div class="popup">
+        <div class="popup_header">
+          <i class="icon64 icon_nodata"></i>
+          <h3 class="popup_tit">타이틀영역</h3>
+        </div>
+        <div class="popup_body">
+          <p class="popup_txt">
+            제공해주신 마이데이터 정보는<br>
+            안전하게 보관되며,<br>
+            KB마이차 서비스 제공을 위해 사용됩니다.
+          </p>
+        </div>
+        <div class="popup_footer">
+          <div class="btn_area">
+            <button type="button" class="btn_txt_black btn-popup-cancel"><span>취소</span></button>
+            <button type="button" class="btn_txt_blue btn-popup-confirm"><span>확인</span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- //popup_wrap -->
+    
+  </div>
+  <script src="./assets/js/script.js"></script>
+  <script>
+    UIComponent.modalOpen({type: 'window',option: 'open'});
+  </script>
+</body>
+</html>

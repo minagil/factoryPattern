@@ -1,0 +1,60 @@
+/* reset */
+* {margin: 0;padding: 0;border: 0;background: transparent;box-sizing: border-box;}
+strong {font-weight: bold;}
+html, body {font-family: -apple-system, "Roboto", "NotoSansKR", sans-serif;font-size: 10px;font-weight: 400;letter-spacing: 0;-webkit-text-size-adjust: 100%;}
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {display: block;}
+ul, li, ol {list-style: none;}
+blockquote, q {quotes: none;}
+blockquote:before, blockquote:after,
+q:before, q:after {content: "";content: none;}
+a, a:hover, a:active, a:focus {text-decoration: none;color: #000;}
+button {text-decoration: none;color: #000;border: 0;cursor: pointer;}
+table {border-collapse: collapse;border-spacing: 0;}
+input, select {vertical-align: middle;font-family: "Roboto", "NotoSansKR", sans-serif;font-size: 14px;font-weight: 400;box-sizing: border-box;border-radius: 0;background-color: transparent;border: 0;}
+
+/* layout */
+
+
+/* icon */
+.icon64 {overflow: hidden;display: inline-block;width: 6.4rem;height: 6.4rem;text-indent: -9999px;font-size: 0;vertical-align: middle;}
+.icon_nodata {background: url(../images/icon/icon48-nodata.svg) no-repeat center / contain;}
+
+/* button */
+.btn_area {display: flex;}
+.btn_area a, .btn_area button {display: inline-block;padding: 0 1.6rem;width: 100%;border-radius: 1.2rem;line-height: 5.6rem;text-align: center;}
+.btn_area a span, .btn_area button span {font-size: 1.8rem;color: #222;line-height: 2.6rem;letter-spacing: -0.04rem;font-weight: 500;vertical-align: middle;}
+.btn_area a.btn_txt_blue span, .btn_area button.btn_txt_blue span {color: #2589ff;}
+.btn_area a.btn_yellow, .btn_area button.btn_yellow {background: #ffcc00;}
+
+/* data list */
+.data_list .list_tit {margin-bottom: 1.6rem;}
+.data_list .list_tit span {position: relative;line-height: 2.6rem;color: #222;font-size: 1.8rem;font-weight: 700;letter-spacing: -0.04rem;}
+.data_list ul li {margin-top: 1.6rem;text-align: right;}
+.data_list ul li:first-child {margin-top: 0;}
+.data_list ul li .tit {float: left;font-size: 1.6rem;color: #666;line-height: 2.4rem;font-weight: 400;text-align: left;letter-spacing: -0.04rem;}
+.data_list ul li .txt {display: inline-block;margin-left: 2.4rem;max-width: calc(100% - 12.4rem);font-size: 1.6rem;line-height: 2.4rem;font-weight: 500;letter-spacing: -0.04rem;}
+.data_list ~ .data_list {margin-top: 2.4rem;padding-top: 2.4rem;border-top: 1px solid #eee;}
+
+/* popup */
+.popup_wrap {position: fixed;left: 0;top: 0;z-index: 10;width: 100%;height: 100%;}
+.dimmed {position: absolute;left:0;top: 0;width: 100%;height: 100%;background-color: rgba(0,0,0,0.7);}
+*[data-type=window] .popup {position: absolute;left: 50%;top: 50%;z-index: 1;width: calc(100% - 3.2rem);border-radius: 1.6rem;background-color: #fff;transform: translate(-50%, -50%);}
+*[data-type=window] .popup .popup_header {padding: 3.2rem 1.6rem 0;text-align: center;}
+*[data-type=window] .popup .popup_header .popup_tit {font-size: 1.8rem;color: #222;line-height: 2.6rem;font-weight: 700;letter-spacing: -0.04rem;}
+*[data-type=window] .popup .popup_header .icon64 + .popup_tit {margin: 1.6rem 0 -0.8rem;}
+*[data-type=window] .popup .popup_body {overflow: hidden;padding: 3.2rem 1.6rem 8.8rem;border-radius: 0 0 1.6rem 1.6rem;text-align: center;}
+*[data-type=window] .popup .popup_header + .popup_body {padding-top: 1.6rem;}
+*[data-type=window] .popup .popup_body .popup_txt {font-size: 1.6rem;color: #222;line-height: 2.4rem;font-weight: 400;letter-spacing: -0.04rem;}
+*[data-type=window] .popup .popup_footer {position: absolute;bottom: 0;left: 0;z-index: 1;width: 100%;border-top: 1px solid #eee;}
+*[data-type=window] .popup .popup_footer .btn_area button span {font-size: 1.6rem;}
+
+*[data-type=toast] .popup {position: absolute;left: 0;bottom: -100%;width: 100%;height: auto;border-radius: 2.4rem 2.4rem 0 0;background: #fff;overflow: hidden;z-index: 1;transition: all cubic-bezier(0.65, 0.05, 0.36, 0.5) 0.2s;}
+*[data-type=toast] .popup_header {position: absolute;left: 0;top: 0;z-index: 3;display: flex;align-items: center;padding: 1.6rem 1.6rem 0;width: 100%;height: 7.2rem;border-radius: 2.4rem 2.4rem 0 0;background: #fff;overflow: hidden;}
+*[data-type=toast] .popup_header h3 {padding: 1.3rem 4rem 1.3rem 0;line-height: 3rem;color: #222;font-size: 2rem;font-weight: 700;letter-spacing: -0.04rem;}
+*[data-type=toast] .popup_header .popup_close {position: absolute;top: 1.6rem;right: 0;width: 5.6rem;height: 5.6rem;font-size: 0;text-indent: -9999px;background: url(../images/icon/icon24-close-black.svg) no-repeat center;background-size: 2.4rem 2.4rem;}
+*[data-type=toast] .popup_body {position: relative;padding: 8.8rem 1.6rem;width: 100%;height: auto;max-height: 90vh;background: #fff;overflow-x: hidden;overflow-y: auto;}
+*[data-type=toast] .popup_footer {position: absolute;bottom: 0;left: 0;padding: 1.6rem;width: 100%;background: url(../images/cm/bg-page.svg) no-repeat;background-size: cover;z-index: 10;}
+*[data-type=toast] .btn_area {padding: 0;}
+*[data-type=toast] .btn_area button {line-height: 4.8rem;}
+*[data-type=toast].show .popup {bottom: 0;}
