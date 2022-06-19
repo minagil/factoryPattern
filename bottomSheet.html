@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Toast Popup Style</title>
+  <link rel="stylesheet" href="./assets/css/stye.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="content_header"></div>
+    <div class="content_body"></div>
+
+    <!-- popup_wrap -->
+    <div class="popup_wrap" data-type="bottomSheet">
+      <div class="popup">
+        <div class="popup_header">
+          <h3 class="popup_tit">특약정보조회</h3>
+          <button type="button" class="popup_close">닫기</button>
+        </div>
+        <div class="popup_body">
+          <div class="data_list">
+            <h3 class="list_tit"><span>OOOOOOOOO특약</span></h3>
+            <ul>
+              <li>
+                <span class="tit">상태</span>
+                <span class="txt">정상</span>
+              </li>
+              <li>
+                <span class="tit">만기일</span>
+                <span class="txt">2021.02.04</span>
+              </li>
+              <li>
+                <span class="tit">가입금액</span>
+                <span class="txt bold">100,000,000원</span>
+              </li>
+              <li>
+                <span class="tit">유형</span>
+                <span class="txt">필수</span>
+              </li>
+            </ul>
+          </div>
+          <div class="data_list">
+            <h3 class="list_tit"><span>OOOOOOOOO특약</span></h3>
+            <ul>
+              <li>
+                <span class="tit">상태</span>
+                <span class="txt">정상</span>
+              </li>
+              <li>
+                <span class="tit">만기일</span>
+                <span class="txt">2021.02.04</span>
+              </li>
+              <li>
+                <span class="tit">가입금액</span>
+                <span class="txt bold">100,000,000원</span>
+              </li>
+              <li>
+                <span class="tit">유형</span>
+                <span class="txt">필수</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="popup_footer">
+          <div class="btn_area">
+            <button type="button" class="btn_yellow btn-popup-confirm"><span>확인</span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- //popup_wrap -->
+  </div>
+  <script src="./assets/js/script.js"></script>
+  <script>
+    UIComponent.modalOpen({type: 'bottomSheet',option: 'open'});
+  </script>
+</body>
+</html>

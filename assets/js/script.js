@@ -50,19 +50,18 @@ UIComponent.Popup = function(props){
   }
 
   function setButtons(){
-    var _dataType = props['type'];
-    var _container = document.querySelectorAll('[data-type=' + _dataType + ']')[0];
-    var _closeBtn = _container.querySelector('.btn-popup-cancel');
-    var _confirmBtn = _container.querySelector('.btn-popup-confirm');
+    var _target = props['target'];
+    var _closeBtn = _target.querySelector('.btn-popup-cancel');
+    var _confirmBtn = _target.querySelector('.btn-popup-confirm');
 
     if(_closeBtn){
-      _container.addEventListener('click',function(){
+      _closeBtn.addEventListener('click',function(){
         _module.close();
       });
     }
 
     if(_confirmBtn){
-      _container.addEventListener('click',function(){
+      _confirmBtn.addEventListener('click',function(){
         _module.close();
       });
     }
@@ -75,22 +74,27 @@ UIComponent.Popup = function(props){
 
 UIComponent.BottomSheet = function(props){
   var _module = new UIComponent.ModalInterface();
+  var _target = props['target'];
 
   function init(){
     setButtons();
   }
 
   function setButtons(){
-    var _dataType = props['type'];
-    var _container = document.querySelectorAll('[data-type=' + _dataType + ']')[0];
-    var _closeBtn = _container.querySelector('.btn-popup-cancel');
+    var _closeBtn = _target.querySelector('.popup_close');
 
     if(_closeBtn){
-      _container.addEventListener('click',function(){
+      _closeBtn.addEventListener('click',function(){
         _module.close();
       });
     }
   }
+
+  _target.addEventListener('popupOpen',function(){
+    setTimeout(function(){
+      _target.classList.add('show');
+    },500)
+  });
 
   init();
   return _module
@@ -103,16 +107,26 @@ UIComponent.modalOpen = function(props){
   }
 
   function modalFatory(){
-    var _target = props['type'];
-    var _open = props['option'];
+    var _type = props['type'];
+    var _option = props['option'];
     var _item = null;
 
-    if(_target === 'window' && _open){
-      _item = new UIComponent.Popup(props);
-      _item.open();
-    }else if(_target === 'bottomSheet' && _open){
-      _item = new UIComponent.BottomSheet(props);
-      _item.open();
+    if(_type === 'window' && _option === 'open'){
+      let _lists = document.querySelectorAll('[data-type="window"]');
+      _lists.forEach(function(_list){
+        _item = new UIComponent.Popup({
+          'target':_list
+        });
+        _item.open();
+      });
+    }else if(_type === 'bottomSheet' && _option === 'open'){
+      let _lists = document.querySelectorAll('[data-type="bottomSheet"]');
+      _lists.forEach(function(_list){
+        _item = new UIComponent.BottomSheet({
+          'target' : _list
+        });
+        _item.open();
+      });
     }
     return _item;
   }
